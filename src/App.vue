@@ -1,9 +1,13 @@
 <script setup lang="ts">
-import CardList from './components/CardList.vue';
+import TodoList from "./components/TodoList.vue";
+import { provide } from "vue";
+import { todos } from "./useTodo";
+
+provide("todos", todos);
 </script>
 
 <template>
-  <CardList></CardList>
+  <TodoList />
 </template>
 
 <style>
