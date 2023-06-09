@@ -1,51 +1,22 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
-import CardList from "./components/CardList.vue";
-import SecondCardList from "./components/SecondCardList.vue";
-
-const isActiveTabName = ref(1);
-const updateTab = (number: number) => {
-  isActiveTabName.value = number;
-};
-
-const currentComponet = computed(() => {
-  switch (isActiveTabName.value) {
-    case 1:
-      return CardList;
-    case 2:
-      return SecondCardList;
-    case 3:
-      return CardList;
-    default:
-      return CardList;
-  }
-});
+import Form from "./components/Form.vue";
 </script>
 
 <template>
-  <div class="tab-changer">
-    <button @click="updateTab(1)">Tab 1</button>
-    <button @click="updateTab(2)">Tab 2</button>
-    <button @click="updateTab(3)">Tab 3</button>
-  </div>
-  <div class="tab-contents">
-    <!-- <CardList></CardList> -->
-    <component :is="currentComponet"></component>
-    <!-- <CardList v-if="isFirstTab"></CardList>
-    <SecondCardList v-if="!isFirstTab"></SecondCardList> -->
-  </div>
+  <Form />
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  box-sizing: border-box;
 }
 
-.tab-contents {
-  margin-top: 20px;
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #292929;
 }
 </style>
