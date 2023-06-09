@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Card from "./Card.vue";
-import RocketIcon from "./RocketIcon.vue";
+import Card from './Card.vue';
+import RocketIcon from './RocketIcon.vue';
 </script>
 
 <template>

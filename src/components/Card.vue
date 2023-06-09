@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import { defineProps } from 'vue'
 defineProps<{
-  title: string;
+  title: string,
 }>();
 </script>
 
@@ -11,7 +12,9 @@ defineProps<{
       <slot></slot>
     </div>
     <div class="footer">
-      <slot name="footer">Default Footer</slot>
+      <slot name="footer">
+        <span>Default Footer</span>
+      </slot>
     </div>
   </div>
 </template>
@@ -20,9 +23,8 @@ defineProps<{
 .card-container {
   box-shadow: 2, 8px, black;
   border-radius: 8px;
-  padding: 20px 0;
+  padding: 20px 0px 0px 0px;
   width: 300px;
-  height: 80px;
   background-color: #ccc;
   display: flex;
   flex-direction: column;
@@ -30,7 +32,7 @@ defineProps<{
 }
 
 .content {
-  padding: 0 20px;
+  padding: 0px 20px 0px 20px;
 }
 
 .title {
@@ -43,7 +45,7 @@ defineProps<{
   height: 30px;
   background-color: rgb(22, 119, 203);
   width: 100%;
-  border-radius: 0 0 8px 8px;
+  border-radius: 0px 0px 8px 8px;
   justify-content: center;
   align-items: center;
 }
